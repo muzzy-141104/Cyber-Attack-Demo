@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horror Category</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: bisque;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .book-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .book {
+            width: 200px;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 5px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .book:hover {
+            transform: scale(1.05);
+        }
+
+        .book img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .book-title {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        .book-link {
+            display: block;
+            margin-top: 10px;
+            color: #0066c0;
+            text-decoration: none;
+        }
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            font-size: 16px;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+
+        .back-button:active {
+            transform: translateY(1px);
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Horror Category</h1>
+    <div class="book-container">
+        <div class="book">
+            <a href="/draeula"><img src="/static/assets/images/dracula .jpg"></a>
+            <div class="book-title">Dracula (Deluxe Hardbound Edition)</div>
+            <p>Price: ₹479</p>
+        </div>
+        <div class="book">
+            <a href="/ghosts"><img src="/static/assets/images/ghosts1.jpg"></a>
+            <div class="book-title">Ghosts of The Silent Hills</div>
+            <p>Price: ₹178</p>
+        </div>
+        <div class="book">
+            <a href="/playthings"><img src="/static/assets/images/play things.webp"></a>
+            <div class="book-title">Playthings: Toys Of Terror </div>
+            <p>Price: ₹248</p>
+        </div>
+        <div class="book">
+            <a href="/that_things"><img src="/static/assets/images/that night.webp"></a>
+            <div class="book-title">That Night: Four Friends, Twenty Years</div>
+            <p>Price: ₹164</p>
+        </div>
+        <a href="/category" class="back-button">Back</a>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: bisque;
+        }
+
+        h1,
+        h2 {
+            color: #333;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            background-color: #007bff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        a:hover {
+            background-color: #0056b3;
+        }
+
+        .home-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            font-size: 16px;
+        }
+
+        .home-button:hover {
+            background-color: #4169e1;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .rating {
+            unicode-bidi: bidi-override;
+            direction: rtl;
+            text-align: center;
+        }
+
+        .rating>span {
+            display: inline-block;
+            position: relative;
+            width: 1.5em;
+            /* Increased the size of stars */
+            font-size: 24px;
+            /* Increased the size of stars */
+            cursor: pointer;
+        }
+
+        .rating>span:hover:before,
+        .rating>span:hover~span:before {
+            content: "\2605";
+            position: absolute;
+            color: gold;
+        }
+
+        .rating-count {
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avatar Free Comic Book Day 2011</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Avatar Free Comic Book Day 2011 (Avatar: The Last Airbender) - ₹294</h1>
+
+        <!-- Image of the book cover -->
+        <img src="/static/assets/images/avatar.webp" alt="Avatar Free Comic Book Day 2011 Cover">
+
+        <h2>About the Book</h2>
+        <p><strong>Author:</strong> J. Torres</p>
+        <p><strong>Format:</strong> Kindle Edition</p>
+
+        <h2>Description</h2>
+        <p>Since its debut in 2005, <em>Avatar: The Last Airbender</em> has remained one of Nickelodeon's most talked
+            about and highest-rated animated series to date. It offers an epic storyline, engaging characters, action,
+            adventure, and a powerful message about the importance of hope in a world long-besieged by war, serving up
+            top-notch entertainment. It's a stunning masterpiece of animated storytelling that harmonizes Western
+            influences with aesthetic inspiration drawn from a diverse array of cultures, including those of China,
+            Japan, India, and the Inuit.</p>
+
+
+
+        {% for x in book %}
+        {% if x.id == 15 %}
+        <a href="{% url 'buy' x.id %}">Buy</a>
+        {% else %}
+        
+        <!-- Default HTML content for other books -->
+        {% endif %}
+        {% endfor %}
+        <a href="/comics" class="back-button">Back</a>
+        <a href="/home" class="home-button">HOME</a>
+    </div>
+
+
+
+</body>
+
+</html>

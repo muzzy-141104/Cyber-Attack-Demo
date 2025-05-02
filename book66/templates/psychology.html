@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psychology Category</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: bisque;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .book-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .book {
+            width: 200px;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 5px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .book:hover {
+            transform: scale(1.05);
+        }
+
+        .book img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .book-title {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        .book-link {
+            display: block;
+            margin-top: 10px;
+            color: #0066c0;
+            text-decoration: none;
+        }
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            font-size: 16px;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+
+        .back-button:active {
+            transform: translateY(1px);
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Psychology Category</h1>
+    <div class="book-container">
+        <div class="book">
+            <a href="/dark"><img src="/static/assets/images/dark.jpg"></a>
+            <div class="book-title">Dark Psychology Secrets & Manipulation</div>
+            <p>Price: ₹429</p>
+        </div>
+        <div class="book">
+            <a href="/behave"><img src="/static/assets/images/behavep.jpg"></a>
+            <div class="book-title">Behave</div>
+            <p>Price: ₹214</p>
+        </div>
+        <div class="book">
+            <a href="/hooked"><img src="/static/assets/images/hooked.jpg"></a>
+            <div class="book-title">HOOKED</div>
+            <p>Price: ₹350</p>
+        </div>
+        <div class="book">
+            <a href="/psycho_enterance_exam"><img src="/static/assets/images/psycho enterance exam.jpg"></a>
+            <div class="book-title">Psychology Entrance Examinations 2024</div>
+            <p>Price: ₹449</p>
+        </div>
+        <a href="/category" class="back-button">Back</a>
+    </div>
+</body>
+
+</html>

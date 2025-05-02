@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playthings: Toys Of Terror</title>
+    <style>
+      body {
+          font-family: 'Arial', sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: bisque;
+      }
+
+      h1,
+      h2 {
+          color: #333;
+      }
+
+      img {
+          max-width: 100%;
+          height: auto;
+          display: block;
+          margin: 0 auto;
+      }
+
+      ul {
+          list-style: none;
+          padding: 0;
+      }
+
+      ul li {
+          margin-bottom: 10px;
+      }
+
+      p {
+          line-height: 1.6;
+      }
+
+      a {
+          text-decoration: none;
+          color: white;
+          background-color: #007bff;
+          padding: 10px 20px;
+          border-radius: 5px;
+          display: inline-block;
+          margin-top: 20px;
+      }
+
+      a:hover {
+          background-color: #0056b3;
+      }
+      .home-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            font-size: 16px;
+        }
+
+        .home-button:hover {
+            background-color: #4169e1;
+        }
+      .container {
+          width: 80%;
+          margin: 20px auto;
+          background-color: rgba(255, 255, 255, 0.5);
+          padding: 20px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Playthings: Toys Of Terror - ₹248</h1>
+
+  <!-- Image of the book cover -->
+  <img src="/static/assets/images/play things.webp" alt="Playthings: Toys Of Terror Book Cover">
+
+  <p><strong>Author:</strong> Neil D'Silva</p>
+  <p><strong>Published:</strong> Import, 24 October 2022</p>
+  <p><strong>Format:</strong> Paperback</p>
+
+  <p>Karun suspects that his childhood toy-a clown named Jokko-is out to get him. Even after he throws it away multiple times, it follows him around, standing at doorways, clapping its pudgy hands, smiling, staring, tripping him on wires and choking him in his sleep . . .</p>
+
+  <p>Fearing for his life, Karun confides in The Fearless Four-a freshly minted paranormal investigation agency run by four brave youngsters. As the investigators delve deep into the case, they uncover a more sinister plan at play: More vengeful toys are coming to life, attacking their owners, and turning them into living zombies.</p>
+
+  <p>Can The Fearless Four save Karun and the other children before it's too late?</p>
+
+  <!-- Link to purchase the book -->
+  {% for x in book %}
+  {% if x.id == 7 %}
+  <a href="{% url 'buy' x.id %}">Buy</a>
+  {% else %}
+  
+  <!-- Default HTML content for other books -->
+  {% endif %}
+  {% endfor %}
+  <a href="/horror" class="back-button">Back</a>
+  <a href="/home" class="home-button">HOME</a>
+</div>
+
+</body>
+</html>

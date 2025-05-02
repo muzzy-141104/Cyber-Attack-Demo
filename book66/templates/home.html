@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<!-- Website template by freewebsitetemplates.com -->
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>BOOKWORMS' HEAVEN</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="/static/assets/css/style.css" type="text/css">
+	<style>
+		body {
+			font-family: "EB Garamond", serif;
+			margin: 0;
+			padding: 0;
+			background-color: bisque;
+		}
+
+		h1 {
+			text-align: center;
+			margin-top: 20px;
+		}
+
+		a {
+			text-decoration: none;
+			color: #0066c0;
+			font-weight: bold;
+			margin: left 10px;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+
+		.book-container {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			gap: 20px;
+			margin-top: 20px;
+		}
+
+		.book {
+			width: 200px;
+			padding: 10px;
+			background-color: rgba(255, 255, 255, 0.5);
+			border: 1px solid #ddd;
+			border-radius: 5px;
+			text-align: center;
+			transition: transform 0.3s;
+		}
+
+		.book:hover {
+			transform: scale(1.05);
+		}
+
+		.book img {
+			max-width: 100%;
+			height: auto;
+		}
+
+		.book-title {
+			margin-top: 10px;
+			font-size: 16px;
+		}
+
+		.book-link {
+			display: block;
+			margin-top: 10px;
+			color: #0066c0;
+			text-decoration: none;
+		}
+
+		.container {
+			width: 80%;
+			margin: 15px auto;
+			background-color: rgba(255, 255, 255, 0.5);
+			padding: 20px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+
+
+		.footer div div {
+			background: none #fff;
+			height: 47px;
+			padding: 0;
+		}
+
+		.footer div div ul {
+			float: left;
+			list-style: none;
+			margin: 10px 135px 0 35px;
+			overflow: hidden;
+			padding: 0;
+		}
+
+		.footer div div ul li:first-child {
+			background: none;
+			margin: 0;
+			padding: 0 8px 0 0;
+		}
+
+		.footer div div ul li {
+			float: left;
+			padding: 0 8px;
+		}
+
+		.footer div div ul li a {
+			color: #246ea5;
+			font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+			font-size: 12px;
+			text-decoration: none;
+		}
+
+		.footer div div ul li a:hover {
+			text-decoration: none;
+		}
+
+		.footer div div p {
+			color: #a9b1b9;
+			float: left;
+			font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+			font-size: 10px;
+			line-height: 16px;
+			margin: 15px 0 0;
+		}
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            z-index: -1;
+        }
+    </style>
+    
+
+	</style>
+</head>
+
+<body>
+	<div class="page">
+		<div class="header">
+			<a href="/home" id="logo"><img src="/static/assets/images/log.png" alt="logo" width="145" height="136"></a>
+
+
+			<div>
+				<div>
+					{% if user_profile %}
+					{% if user_profile.user_type == 'seller' %}
+					<p><a href="{% url 'sellers_dashboard' %}">Welcome, {{ user_profile.username }}!</a><span>|</span>
+						<a href="{% url 'user_logout' %}">Logout</a>
+					</p>
+					{% elif user_profile.user_type == 'buyer' %}
+					<p><a href="{% url 'buyer_dashboard' %}">Welcome, {{ user_profile.username }}!</a><span>|</span>
+						<a href="{% url 'user_logout' %}">Logout</a>
+					</p>
+					{% endif %}
+					{% else %}
+					<a href="{% url 'register' %}">Create Account</a> <span>|</span> <a
+						href="{% url 'login' %}">Log-in</a>
+					{% endif %}
+				</div>
+				<div>
+					<ul>
+						<li class="selected">
+							<a href="home.html"><span>Home</span></a>
+						</li>
+
+						<li>
+							<a>wishlist</a>
+						</li>
+						<li>
+							<a href="/category"><span>Category</span></a>
+						</li>
+
+						<li>
+							<a href="/about"><span>About</span></a>
+						</li>
+
+					</ul>
+					<form action="index.html">
+						<input type="text" onclick="this.value='';" onfocus="this.select()"
+							onblur="this.value=!this.value?'Enter search query':this.value;" value="Enter search query">
+						<input type="submit" value="">
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="body">
+			<h1>Trending Books</h1>
+			<div class="book-container">
+				<div class="book">
+					<a href="/wrilane"><img src="/static/assets/images/wrilane.webp"></a>
+					<div class="book-title">A WRINKLE IN TIME</div>
+					<p>Price: ₹230</p>
+				</div>
+				<div class="book">
+					<a href="/ghosts"><img src="/static/assets/images/ghosts1.jpg"></a>
+					<div class="book-title">Ghosts of The Silent Hills</div>
+					<p>Price: ₹178</p>
+				</div>
+				<div class="book">
+					<a href="/hooked"><img src="/static/assets/images/hooked.jpg"></a>
+					<div class="book-title">HOOKED</div>
+					<p>Price: ₹350</p>
+				</div>
+				<div class="book">
+					<a href="/big"><img src="/static/assets/images/big.webp"></a>
+					<div class="book-title">Big Bang Blu</div>
+					<p>Price: ₹350</p>
+				</div>
+				<h1>Recommended Books</h1>
+				<div class="book-container">
+					<div class="book">
+						<a href="/playthings"><img src="/static/assets/images/play things.webp"></a>
+						<div class="book-title">Playthings: Toys Of Terror</div>
+						<p>Price: ₹248</p>
+					</div>
+					<div class="book">
+						<a href="/avatar"><img src="/static/assets/images/avatar.webp"></a>
+						<div class="book-title">Avatar</div>
+						<p>Price: ₹294</p>
+					</div>
+					<div class="book">
+						<a href="/samsara"><img src="/static/assets/images/samsara.webp"></a>
+						<div class="book-title">ENTER THE VILLAGE OF GODS</div>
+						<p>Price: ₹269</p>
+					</div>
+					<div class="book">
+						<a href="/dark"><img src="/static/assets/images/dark.jpg"></a>
+						<div class="book-title">Dark Psychology Secrets & Manipulation</div>
+						<p>Price: ₹429</p>
+					</div>
+					<div class="book">
+						<a href="{% url 'change_email' %}">
+							<img src="/static/assets/images/behavep.jpg" alt="Change Email">
+						</a>
+						<div class="book-title">Behave</div>
+						<p>Price: ₹429</p>
+					</div>
+				</div>
+
+			</div>
+			<iframe src="dark.html" width="100%" height="100%"></iframe>
+</body>
+<div class="home">
+	<div class="featured">
+
+		<div>
+			<div>
+
+
+			</div>
+		</div>
+	</div>
+
+
+</div>
+</div>
+<div class="footer">
+	<div>
+		<div>
+			<ul>
+
+			</ul>
+			<p>
+				&#169; Copyright &#169; 2024.BOOKWORMS HEAVEN all rights reserved
+			</p>
+			<div class="connect">
+				<a href="http://freewebsitetemplates.com/go/facebook/" id="fb">facebook</a> <a
+					href="http://freewebsitetemplates.com/go/twitter/" id="twitter">twitter</a> <a
+					href="http://freewebsitetemplates.com/go/googleplus/" id="googleplus">googleplus</a> <a
+					href="http://freewebsitetemplates.com/go/youtube/" id="vimeo">vimeo</a>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+</body>
+
+</html>

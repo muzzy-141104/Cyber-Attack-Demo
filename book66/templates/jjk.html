@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jujutsu Kaisen Vol 1</title>
+    <style>
+      body {
+          font-family: 'Arial', sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: bisque;
+      }
+
+      h1,
+      h2 {
+          color: #333;
+      }
+
+      img {
+          max-width: 100%;
+          height: auto;
+          display: block;
+          margin: 0 auto;
+      }
+
+      ul {
+          list-style: none;
+          padding: 0;
+      }
+
+      ul li {
+          margin-bottom: 10px;
+      }
+
+      p {
+          line-height: 1.6;
+      }
+
+      a {
+          text-decoration: none;
+          color: white;
+          background-color: #007bff;
+          padding: 10px 20px;
+          border-radius: 5px;
+          display: inline-block;
+          margin-top: 20px;
+      }
+
+      a:hover {
+          background-color: #0056b3;
+      }
+      .home-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            font-size: 16px;
+        }
+
+        .home-button:hover {
+            background-color: #4169e1;
+        }
+      .container {
+          width: 80%;
+          margin: 20px auto;
+          background-color: rgba(255, 255, 255, 0.5);
+          padding: 20px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Jujutsu Kaisen Vol 1 - ₹468</h1>
+
+  <!-- Image of the book cover -->
+  <img src="/static/assets/images/jjk.webp" alt="Jujutsu Kaisen Vol 1 Cover">
+
+  <p><strong>Author:</strong> Gege Akutami</p>
+  <p><strong>Published:</strong> 1 January 2019</p>
+  <p><strong>Format:</strong> Paperback</p>
+
+  <p>Yuji Itadori is resolved to save the world from cursed spirits, but he soon learns that the best way to do it is to slowly lose his humanity and become one himself! In a world where cursed spirits feed on unsuspecting humans, fragments of the legendary and feared demon Ryomen Sukuna were lost and scattered about. Should any demon consume Sukuna’s body parts, the power they gain could destroy the world as we know it. Fortunately, there exists a mysterious school of Jujutsu Sorcerers who exist to protect the precarious existence of the living from the supernatural!</p>
+
+  <p>Although Yuji Itadori looks like your average teenager, his immense physical strength is something to behold! Every sports club wants him to join, but Itadori would rather hang out with the school outcasts in the Occult Research Club. One day, the club manages to get their hands on a sealed cursed object. Little do they know the terror they’ll unleash when they break the seal…</p>
+
+  {% for x in book %}
+  {% if x.id == 8 %}
+  <a href="{% url 'buy' x.id %}">Buy</a>
+  {% else %}
+  <!-- Default HTML content for other books -->
+  {% endif %}
+  {% endfor %}
+  <a href="/comics" class="back-button">Back</a>
+  <a href="/home" class="home-button">HOME</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!-- sellers_dashboard.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller's Dashboard</title>
+    <style>
+        body {
+            font-family: "EB Garamond", serif;
+            margin: 0;
+            padding: 0;
+            background-color: bisque;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        h2 {
+            margin-top: 20px;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #0066c0;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            width: 80%;
+            margin: 15px auto;
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .home-button {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            color: #0066c0;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+    <!-- Your CSS styles here -->
+</head>
+
+<body>
+    <script>
+        function addDescription() {
+            var bookId = prompt("Enter the book ID:");
+            if (bookId != null && bookId.trim() !== "") {
+                window.location.href = "{% url 'add_description' 0 %}".replace('0', bookId);
+            }
+        }
+    </script>
+    <div class="container">
+        <h1>Seller's Dashboard</h1>
+
+        <!-- Display seller details -->
+        <h2>Seller Details</h2>
+        <p>Name: {{ user.username }}</p>
+        <p>Email: {{ user.email }}</p>
+        <!-- Add more seller details as needed -->
+
+        <!-- Links to add book and add description pages -->
+        <h2>Actions</h2>
+        <ul>
+            <li><a href="{% url 'add_book' %}">Add Book</a></li>
+            <li>
+                <a href="#" onclick="addDescription()">Add Description</a>
+            </li>
+
+            <!-- Add more links as needed -->
+        </ul>
+
+        <!-- Any other content specific to the seller's dashboard -->
+
+        <a href="/home" class="home-button">HOME</a>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>That Night: Four Friends, Twenty Years</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: bisque;
+        }
+  
+        h1,
+        h2 {
+            color: #333;
+        }
+  
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+  
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+  
+        ul li {
+            margin-bottom: 10px;
+        }
+  
+        p {
+            line-height: 1.6;
+        }
+  
+        a {
+            text-decoration: none;
+            color: white;
+            background-color: #007bff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+  
+        a:hover {
+            background-color: #0056b3;
+        }
+        .home-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            font-size: 16px;
+        }
+
+        .home-button:hover {
+            background-color: #4169e1;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>That Night: Four Friends, Twenty Years - ₹164</h1>
+
+  <!-- Image of the book cover -->
+  <img src="/static/assets/images/that night.webp" alt="That Night Book Cover">
+
+  <p><strong>Author:</strong> Nidhi Upadhyay</p>
+  <p><strong>Published:</strong> 5 April 2021</p>
+  <p><strong>Format:</strong> Paperback</p>
+
+  <p>Natasha, Riya, Anjali and Katherine were best friends in college - each different from the other yet inseparable - until that night. It was the night that began with a bottle of whisky and a game of Ouija but ended with the death of Sania, their unlikeable hostel mate. The friends vowed never to discuss that fateful night, a pact that had kept their friendship and guilt dormant for the last twenty years.</p>
+
+  <p>But now, someone has begun to mess with them, threatening to reveal the truth that only Sania knew. Is it a hacker playing on their guilt or has Sania's ghost really returned to avenge her death?</p>
+
+  <p>As the faceless enemy closes in on them, the friends come together once again to recount what really happened that night. But when the story is retold by each of them, the pieces don't fit. Because none of them is telling the whole truth . . .</p>
+
+  <p>That Night is a dark, twisted tale of friendship and betrayal that draws you in and confounds you at every turn.</p>
+
+  <!-- Link to purchase the book -->
+        {% for x in book %}
+        {% if x.id == 2 %}
+        <a href="{% url 'buy' x.id %}">Buy</a>
+        {% else %}
+        
+        <!-- Default HTML content for other books -->
+        {% endif %}
+        {% endfor %}
+  <a href="/horror" class="back-button">Back</a>
+  <a href="/home" class="home-button">HOME</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOOKED - ₹350</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: bisque;
+        }
+
+        h1,
+        h2 {
+            color: #333;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            background-color: #007bff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        a:hover {
+            background-color: #32527B;
+        }
+
+        .home-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: #32527B;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            font-size: 16px;
+        }
+
+        .home-button:hover {
+            background-color: #4169e1;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>HOOKED - ₹350</h1>
+
+        <img src="/static/assets/images/hooked.jpg" alt="HOOKED Book Cover">
+        <p><strong>Author:</strong> Nir Eyal</p>
+        <p class="published-date">Published: December 25, 2013</p>
+        <p>Why do some products capture our attention while others flop? What makes us engage with certain things out of
+            sheer habit? Is there an underlying pattern to how technologies hook us? Nir Eyal answers these questions
+            with his years of research, consulting, and practical experience, providing readers with practical insights.
+        </p>
+
+        {% for x in book %}
+        {% if x.id == 9 %}
+        <a href="{% url 'buy' x.id %}">Buy</a>
+        {% else %}
+        
+        <!-- Default HTML content for other books -->
+        {% endif %}
+        {% endfor %}
+
+        <a href="/psychology" class="back-button">Back</a>
+        <a href="/home" class="home-button">HOME</a>
+    </div>
+
+
+
+</body>
+
+</html>
